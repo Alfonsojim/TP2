@@ -1,4 +1,4 @@
-futbol
-tenis
-baloncesto
-natacion
+deporte:futbol
+deporte:tenis
+deporte:baloncesto
+deporte:natacion
