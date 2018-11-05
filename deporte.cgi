@@ -1,11 +1,9 @@
 #!/usr/bin/perl
 #
-#  PROGRAM:	scrolling_list.cgi
+#  PROGRAM:	deporte.cgi
 #
-#  PURPOSE:	Demonstrate (1) how to create a scrolling_list form and
-#		(2) how to determine the value(s) selected by the user.
 #
-#  Created by alvin alexander, devdaily.com.
+#  Created by Alfonso Jimenez.
 #
 
 #-----------------------------------#
@@ -47,13 +45,10 @@ if (!$query->param) {
 					   'Basketball',
 					   'Swimming'],
 				 -size=>8,
-				 -multiple=>'true',
 				 -default=>'Perl');
 
 	# Notes:
 	# ------
-	#	"-multiple=>'true'" lets the user make multiple selections
-	#		from the scrolling_list
 	#	"-default" is optional
 	#	"-size" lets you specify the number of visible rows in the list
 	#	can also use an optional "-labels" parameter to let the user
@@ -65,25 +60,22 @@ if (!$query->param) {
 	print $query->endform;
 
 } 
-	#----------------------------------------------------------#
-	#  4b.  If the program is called with parameters, retrieve #
-	#  the 'languages' parameter, assign it to an array        #
-	#  named $languages, then print the array with each        #
-	#  name separated by a <BR> tag.                           #
-	#----------------------------------------------------------#
+        #----------------------------------------------------------#
+        #  4b.  If the program is called with parameters, retrieve #
+        #  the 'sport' parameter, assign it to an variable named   #
+        #  $sports                                                 #
+        #----------------------------------------------------------#
 if ($query->param('sport')) {
 	print $query->h3('Your favorite sport are:');
 	$sports = $query->param('sport');
 #	print "<BLOCKQUOTE>\n";
-	#foreach $sport (@sports) {
 		print "$sports<BR>";
-#	}
 #	print "</BLOCKQUOTE>\n"
 
         print $query->start_form;
         print $query->h1('¿What is your name?');
         print $query->textfield(-name=>'nombre');
-      	print $query->submit;
+      	print $query->submit(-value=>'Submit name');
         print $query->end_form;
         print $query->br;
 }
