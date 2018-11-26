@@ -19,7 +19,7 @@ $query = new CGI;
 #  2. Print the doctype statement  #
 #----------------------------------#
 
-print $query->header(-charset=>'utf8');
+print $query->header;
 
 
 #----------------------------------------------------#
