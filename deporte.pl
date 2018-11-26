@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-print "Content-Type: text/html\n\n";
+print "Content-Type: text/html; charset=utf-8\n\n";
 if($ENV{'QUERY_STRING'} eq "") {
    print "<h1>Elige un deporte</h1>
           <form name=\"search\" method=\"get\" >";
